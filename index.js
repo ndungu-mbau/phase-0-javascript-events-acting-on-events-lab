@@ -1,20 +1,20 @@
 // Your code here
 const dodger = document.getElementById('dodger')
+const game = document.getElementById('game')
 
 function moveDodgerLeft() {
-  const leftNumbers = dodger.style.left.replace('px', '')
-  const left = parseInt(leftNumbers, 10)
-
-  dodger.style.left = `${left - 1}px`
+  var leftPosition = parseInt(dodger.style.left);
+  if (leftPosition > 0) {
+    dodger.style.left = `${leftPosition - 1}px`;
+  }
 }
 
 function moveDodgerRight() {
-  const leftNumbers = dodger.style.left.replace('px', '')
-  const left = parseInt(leftNumbers, 10)
-
-  dodger.style.left = `${left + 1}px`
+  var leftPosition = parseInt(dodger.style.left);
+  if (leftPosition < (game.offsetWidth - dodger.offsetWidth)) {
+    dodger.style.left = `${leftPosition + 1}px`;
+  }
 }
-
 document.addEventListener("keydown", function (event) {
   if (event.key === "ArrowLeft") {
     moveDodgerLeft();
