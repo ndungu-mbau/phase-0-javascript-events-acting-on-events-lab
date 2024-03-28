@@ -1,6 +1,6 @@
 // Your code here
-const dodger = document.getElementById('dodger')
-const game = document.getElementById('game')
+const dodger = document.getElementById("dodger");
+const game = document.getElementById("game");
 
 function moveDodgerLeft() {
   var leftPosition = parseInt(dodger.style.left);
@@ -11,7 +11,7 @@ function moveDodgerLeft() {
 
 function moveDodgerRight() {
   var leftPosition = parseInt(dodger.style.left);
-  if (leftPosition < (game.offsetWidth - dodger.offsetWidth)) {
+  if (leftPosition < 360) {
     dodger.style.left = `${leftPosition + 1}px`;
   }
 }
